@@ -108,3 +108,32 @@ body {
     top: -15px;
     background: red;
 }
+
+.hamburger {
+    position: relative;
+    width: 40px;
+    height: 3px;
+    display: none;
+}
+
+.hamburger:after, .hamburger:before, .hamburger span {
+    width: 40px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    position: absolute;
+    display: block;
+}
+
+.hamburger:before{top:0; content:"";}
+.hamburger span {top:15px;}
+.hamburger:after {top:30px; content:"";}
+
+@media screen and (max-width:768px) {
+    .hamburger {
+        display:block;
+    }
+    .navigation ul {
+        display:none;
+    }s
+}
