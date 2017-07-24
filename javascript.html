@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Moje portfolio2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+</head>
+
+<body>
+    <input id="input" />
+    <h1 id="text"><h1/>
+        
+        <script>
+            var input = document.getElementById("input"),
+                text = document.getElementById("text");
+
+            input.addEventListener("keydown", function() {
+                text.innerHTML = input.value;
+            });
+        </script>
+</body>
+
+</html>

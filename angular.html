@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Moje portfolio2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <!--
+    <h1>Waga</h1>
+    <input ng-model="weight" />
+    <h2>Wzrost</h2>
+    <input ng-model="height" />
+    <h3>Twoje bmi to: {{(weight)/(height*height)}}</h3>
+-->
+
+    <input ng-model="myName" />
+    <h1>{{myName}}</h1>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope){
+            $scope.myName = "Janek";
+        });
+
+    </script>
+</body>
+
+</html>

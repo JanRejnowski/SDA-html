@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Opis strony">
+    <meta name="viewport" content="initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <style>
+        li a {
+            color: red;
+        }
+        
+        [ng-click] {
+            cursor: pointer;
+        }
+        
+        .line-through {
+            text-decoration: line-through;
+        }
+
+    </style>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+    <ul>
+        <li ng-repeat="task in tasks" ng-class="task.status" ng- click="toggleStatus(&index)">
+            {{$index}}.{{task.name}}
+            <a ng-click="removeTask($index)">usuń</a>
+        </li>
+    </ul>
+    <input ng-model="newTask">
+    <button ng-click="addTask()">Dodaj zadanie</button>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+
+            $scope.tasks = [{
+                    name: "pozmywać",
+                    status: "line-through"
+                },
+                {
+                    name: "pozamiatać",
+                    status: "active",
+                },
+                {
+                    name: "posprzątać",
+                    status: "active",
+                }
+            ];
+
+            $scope.newTask = "";
+            $scope.addTask = function() {
+                if ($scope.newTask != "") {
+                    $scope.tasks.push({
+                        name: $scope.newTask,
+                        status: "active"
+                    })
+                }
+            };
+
+            $scope.removeTask = function(index) {
+                $scope.tasks.splice(index, 1);
+            }
+
+            $scope.toggle = function(index) {
+               
+            };
+        });
+
+    </script>
+</body>
+
+</html>
